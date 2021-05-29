@@ -1,0 +1,92 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="Admin_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            font-family: Tahoma;
+        }
+        .style2
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="2" class="style1">
+            <tr>
+                <td align="center" bgcolor="#EEEEEE" style="direction: rtl">
+                    Kontrol paneli</td>
+            </tr>
+            <tr>
+                <td style="direction: rtl">
+                    <table cellpadding="2" class="style2" style="border: thin dashed #996600">
+                        <tr>
+                            <td align="center" bgcolor="#FFFFE8">
+                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="False" 
+                                    ForeColor="#009933" NavigateUrl="~/Admin/Varieties.aspx">Öğeleri Yönet</asp:HyperLink>
+                            </td>
+                            <td align="center" bgcolor="#FFFFE8">
+                                <asp:HyperLink ID="HyperLink2" runat="server" Font-Underline="False" 
+                                    ForeColor="#009933" NavigateUrl="~/Admin/MealsList.aspx">telefon listesi</asp:HyperLink>
+                            </td>
+                            <td align="center" bgcolor="#FFFFE8">
+                                <asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="False" 
+                                    ForeColor="Red" NavigateUrl="~/Admin/MealsAdd.aspx">telefon ekle</asp:HyperLink>
+                            </td>
+                            <td align="center" bgcolor="#FFFFE8">
+                                <asp:HyperLink ID="HyperLink10" runat="server" Font-Underline="False" 
+                                    ForeColor="#009933" NavigateUrl="~/Admin/UserList.aspx">Üye yönetimi</asp:HyperLink>
+                            </td>
+                            <td align="center" bgcolor="#FFFFE8">
+                                <asp:HyperLink ID="HyperLink11" runat="server" Font-Underline="False" 
+                                    ForeColor="#009933" NavigateUrl="~/Admin/BillsHold.aspx">Banknotlar beklemede</asp:HyperLink>
+                            </td>
+                            <td align="center" bgcolor="#FFFFE8">
+                                <asp:HyperLink ID="HyperLink12" runat="server" Font-Underline="False" 
+                                    ForeColor="#009933" NavigateUrl="~/Admin/BillsLast.aspx">Önceki faturalar</asp:HyperLink>
+                            </td>
+                            <td align="center" bgcolor="#FFFFE8">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="direction: rtl">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td style="direction: rtl">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td style="direction: rtl">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td style="direction: rtl">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center" bgcolor="#EEEEEE" style="direction: rtl">
+                    programlama ve analiz basil muhammed ali<br />
+                    <a href="http://www.basilmuhammedali.com">www.basilmuhammedali.com</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

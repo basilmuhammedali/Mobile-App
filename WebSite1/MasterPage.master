@@ -1,0 +1,204 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            font-family: Tahoma;
+        }
+        .style2
+        {
+            width: 100%;
+            color: #FFFFFF;
+        }
+        .style3
+        {
+            width: 800px;
+            border: 3px solid #876A38;
+        }
+        .style4
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body bgcolor="Black" style="top: 0px; right: 0px; bottom: 0px; left: 0px">
+    <form id="form1" runat="server" 
+    style="top: 0px; right: 0px; bottom: 0px; left: 0px">
+
+    <div style="top: 0px; right: 0px; bottom: 0px; left: 0px">
+        <table cellpadding="0" cellspacing="0" class="style1" 
+            style="top: 0px; right: 0px; bottom: 0px; left: 0px">
+            <tr>
+                <td align="center" 
+                    style="background-image: url('Image/BackHedar1.png')">
+                    <table cellpadding="3" cellspacing="3" class="style2">
+                        <tr>
+                            <td align="center">
+                                <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="False" 
+                                    ForeColor="#FF99FF" NavigateUrl="~/Contact.aspx">Bize ulaşın</asp:HyperLink>
+                            </td>
+                            <td align="center">
+                                <asp:HyperLink ID="HyperLink2" runat="server" Font-Underline="False" 
+                                    ForeColor="#FF99FF" NavigateUrl="~/About.aspx">About us</asp:HyperLink>
+                            </td>
+                            <td align="center" width="400">
+                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="False" 
+                                    ForeColor="#FF99FF" ImageUrl="~/Image/Logo.png">ana sayfa</asp:HyperLink>
+                            </td>
+                            <td align="center">
+                                <asp:HyperLink ID="HyperLink4" runat="server" Font-Underline="False" 
+                                    ForeColor="#FF99FF" NavigateUrl="~/Instructions.aspx">Talimatlar</asp:HyperLink>
+                            </td>
+                            <td align="center">
+                                <asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="False" 
+                                    ForeColor="#FF99FF" NavigateUrl="~/Default.aspx">ana sayfa</asp:HyperLink>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                                <td align="center" style="direction: rtl">
+                                    <asp:DataList ID="DataList1" runat="server" DataKeyField="IDVarieties" 
+                                        DataSourceID="SqlDataSource1" RepeatColumns="10" ShowFooter="False" 
+                                        ShowHeader="False" CellPadding="3" CellSpacing="3" CaptionAlign="Right">
+                                        <AlternatingItemStyle HorizontalAlign="Right" />
+                                        <ItemStyle HorizontalAlign="Right" />
+                                        <ItemTemplate>
+                                            <table cellpadding="2" class="style4">
+                                                <tr>
+                                                    <td style="border: thin dotted #634B23">
+                                                        <asp:HyperLink ID="HyperLink8" runat="server" Font-Strikeout="False" 
+                                                            ForeColor="#DC99C0" 
+                                                            NavigateUrl='<%# Eval("IDVarieties", "Varieties.aspx?IDVarieties={0}") %>' 
+                                                            style="font-size: large" Text='<%# Eval("NameVarieties") %>'></asp:HyperLink>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </ItemTemplate>
+                                        <SelectedItemStyle HorizontalAlign="Right" />
+                                        <SeparatorStyle HorizontalAlign="Right" />
+                                    </asp:DataList>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                        ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                                        SelectCommand="SELECT * FROM [TaVarieties]"></asp:SqlDataSource>
+                                </td>
+                            </tr>
+            <tr>
+                <td align="right" 
+                    style="background-image: url('Image/BackHedar2.png')">
+                    <asp:Panel ID="Panel1" runat="server">
+                        <table cellspacing="1" class="style4">
+                            <tr>
+                                <td align="center">
+                                    <table cellpadding="4" cellspacing="4">
+                                        <tr>
+                                            <td>
+                                                <asp:HyperLink ID="HyperLink7" runat="server" Font-Size="Large" 
+                                                    Font-Underline="False" ForeColor="#999966" NavigateUrl="~/Login.aspx">Oturum açın</asp:HyperLink>
+                                            </td>
+                                            <td style="color: #FFFFFF">
+                                                |</td>
+                                            <td>
+                                                <asp:HyperLink ID="HyperLink6" runat="server" Font-Size="Large" 
+                                                    Font-Underline="False" ForeColor="#999966" NavigateUrl="~/SignUp.aspx">Yeni kayıt</asp:HyperLink>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                    <asp:Panel ID="Panel2" runat="server" Visible="False">
+                        <table cellspacing="1" class="style4">
+                            <tr>
+                                <td align="center">
+                                    <table cellpadding="4" cellspacing="4">
+                                        <tr>
+                                            <td>
+                                                <asp:HyperLink ID="HyperLink12" runat="server" Font-Underline="False" 
+                                                    ForeColor="#FFCCFF" NavigateUrl="~/LogOut.aspx">Çıkış yap</asp:HyperLink>
+                                            </td>
+                                            <td style="color: #FFFFFF">
+                                                |</td>
+                                            <td>
+                                                <asp:HyperLink ID="HyperLink11" runat="server" Font-Underline="False" 
+                                                    ForeColor="#FFCCFF" NavigateUrl="~/BillsLast.aspx">Önceki siparişler ve faturalar</asp:HyperLink>
+                                            </td>
+                                            <td style="color: #FFFFFF">
+                                                |</td>
+                                            <td>
+                                                <asp:HyperLink ID="HyperLink10" runat="server" Font-Underline="False" 
+                                                    ForeColor="#FFCCFF" NavigateUrl="~/BillsHold.aspx">Devam eden siparişler ve faturalar</asp:HyperLink>
+                                            </td>
+                                            <td style="color: #FFFFFF">
+                                                |</td>
+                                            <td>
+                                                <asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="False" 
+                                                    ForeColor="#FFCCFF" NavigateUrl="~/SettingMe.aspx">Ayarlar Hesabım</asp:HyperLink>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="LbName" runat="server" style="color: #CCCC00" Text="Üye adı"></asp:Label>
+                                            </td>
+                                            <td style="direction: rtl; color: #FFFFFF">
+                                               hoş geldiniz:</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" 
+                    style="background-image: url('Image/BackLineGold.png')">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center" 
+                    style="background-image: url('Image/BackTDBody.png')">
+                    <table cellspacing="1" class="style3">
+                        <tr>
+                            <td>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center" 
+                    style="background-image: url('Image/BackHedar1.png')">
+                    <table cellpadding="5" cellspacing="5" class="style2">
+                        <tr>
+                            <td align="center">
+                                programlama ve analiz basil muhammed ali<br />
+                                <a>www.basilmuhammedali.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
